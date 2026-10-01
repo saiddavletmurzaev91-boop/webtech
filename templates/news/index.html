@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    {% for item in news %}
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.content }}</p>
+        <p>Дата: {{ item.created_at|date:"d.m.Y H:i" }}</p>
+        <hr>
+    {% empty %}
+        <p>Новостей пока нет.</p>
+    {% endfor %}
+</body>
+</html>
